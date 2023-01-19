@@ -34,10 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelOutput = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnSucet = new System.Windows.Forms.Button();
+            this.btnRozdiel = new System.Windows.Forms.Button();
+            this.btnSucin = new System.Windows.Forms.Button();
+            this.btnPodiel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonInput
@@ -101,61 +101,65 @@
             this.labelOutput.TabIndex = 5;
             this.labelOutput.Text = "Result: ";
             // 
-            // button2
+            // btnSucet
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(259, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 70);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Sucet";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSucet.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSucet.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSucet.ForeColor = System.Drawing.Color.Red;
+            this.btnSucet.Location = new System.Drawing.Point(259, 35);
+            this.btnSucet.Name = "btnSucet";
+            this.btnSucet.Size = new System.Drawing.Size(132, 70);
+            this.btnSucet.TabIndex = 6;
+            this.btnSucet.Text = "Sucet";
+            this.btnSucet.UseVisualStyleBackColor = false;
+            this.btnSucet.Click += new System.EventHandler(this.btnSucet_Click);
             // 
-            // button3
+            // btnRozdiel
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.ForeColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(418, 35);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 70);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Rozdiel";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnRozdiel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRozdiel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRozdiel.ForeColor = System.Drawing.Color.Red;
+            this.btnRozdiel.Location = new System.Drawing.Point(418, 35);
+            this.btnRozdiel.Name = "btnRozdiel";
+            this.btnRozdiel.Size = new System.Drawing.Size(132, 70);
+            this.btnRozdiel.TabIndex = 7;
+            this.btnRozdiel.Text = "Rozdiel";
+            this.btnRozdiel.UseVisualStyleBackColor = false;
+            this.btnRozdiel.Click += new System.EventHandler(this.btnRozdiel_Click);
             // 
-            // button4
+            // btnSucin
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.ForeColor = System.Drawing.Color.Red;
-            this.button4.Location = new System.Drawing.Point(259, 112);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 70);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Sucin";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnSucin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSucin.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSucin.ForeColor = System.Drawing.Color.Red;
+            this.btnSucin.Location = new System.Drawing.Point(259, 112);
+            this.btnSucin.Name = "btnSucin";
+            this.btnSucin.Size = new System.Drawing.Size(132, 70);
+            this.btnSucin.TabIndex = 8;
+            this.btnSucin.Text = "Sucin";
+            this.btnSucin.UseVisualStyleBackColor = false;
+            this.btnSucin.Click += new System.EventHandler(this.btnSucin_Click);
             // 
-            // button5
+            // btnPodiel
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.ForeColor = System.Drawing.Color.Red;
-            this.button5.Location = new System.Drawing.Point(418, 113);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(132, 70);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Podiel";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnPodiel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnPodiel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPodiel.ForeColor = System.Drawing.Color.Red;
+            this.btnPodiel.Location = new System.Drawing.Point(418, 113);
+            this.btnPodiel.Name = "btnPodiel";
+            this.btnPodiel.Size = new System.Drawing.Size(132, 70);
+            this.btnPodiel.TabIndex = 9;
+            this.btnPodiel.Text = "Podiel";
+            this.btnPodiel.UseVisualStyleBackColor = false;
+            this.btnPodiel.Click += new System.EventHandler(this.btnPodiel_Click);
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(596, 465);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnPodiel);
+            this.Controls.Add(this.btnSucin);
+            this.Controls.Add(this.btnRozdiel);
+            this.Controls.Add(this.btnSucet);
             this.Controls.Add(this.labelOutput);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -178,10 +182,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelOutput;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSucet;
+        private System.Windows.Forms.Button btnRozdiel;
+        private System.Windows.Forms.Button btnSucin;
+        private System.Windows.Forms.Button btnPodiel;
     }
 }
 
