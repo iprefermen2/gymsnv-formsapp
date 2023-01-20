@@ -18,9 +18,10 @@ namespace FormsApp
             InitializeComponent();
         }
 
-        private void buttonInput_Click(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
-            
-        }       
+            Graphics grafika = pictrOutput.CreateGraphics();
+            grafika.DrawLine(Pens.Lime, 50, 200, 350, 200);
+        }
     }
 }

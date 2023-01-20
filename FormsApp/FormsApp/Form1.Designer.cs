@@ -44,7 +44,7 @@
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Press Me!";
             this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.buttonInput_Click);
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // pictrOutput
             // 
