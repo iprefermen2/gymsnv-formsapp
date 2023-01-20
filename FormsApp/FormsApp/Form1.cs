@@ -20,51 +20,7 @@ namespace FormsApp
 
         private void buttonInput_Click(object sender, EventArgs e)
         {
-            int vstupnyText = Convert.ToInt32(textBoxInput.Text);
-            int vystupnyText = Convert.ToInt32(textBoxOutput.Text);
-
-            this.labelOutput.Text = $"Result: {vystupnyText + vstupnyText}";
-        }
-
-        private void textBoxInput_MouseHover(object sender, EventArgs e)
-        {
-            this.textBoxInput.BackColor = Color.DarkOliveGreen;
-        }
-
-        private void btnSucet_Click(object sender, EventArgs e)
-        {
-            int vstupnyText = Convert.ToInt32(textBoxInput.Text);
-            int vystupnyText = Convert.ToInt32(textBoxOutput.Text);
-
-            this.labelOutput.Text = $"Result: {vstupnyText + vystupnyText}";
-
-        }
-
-        private void btnRozdiel_Click(object sender, EventArgs e)
-        {
-            int vstupnyText = Convert.ToInt32(textBoxInput.Text);
-            int vystupnyText = Convert.ToInt32(textBoxOutput.Text);
-
-            this.labelOutput.Text = $"Result: {vstupnyText - vystupnyText}";
-
-        }
-
-        private void btnSucin_Click(object sender, EventArgs e)
-        {
-            int vstupnyText = Convert.ToInt32(textBoxInput.Text);
-            int vystupnyText = Convert.ToInt32(textBoxOutput.Text);
-
-            this.labelOutput.Text = $"Result: {vstupnyText * vystupnyText}";
-
-        }
-
-        private void btnPodiel_Click(object sender, EventArgs e)
-        {
-            double vstupnyText = Convert.ToInt32(textBoxInput.Text);
-            double vystupnyText = Convert.ToInt32(textBoxOutput.Text);
-
-            this.labelOutput.Text = $"Result: {vstupnyText / vystupnyText}";
-
-        }
+            
+        }       
     }
 }
