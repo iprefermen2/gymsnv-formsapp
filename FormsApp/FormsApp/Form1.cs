@@ -22,14 +22,17 @@ namespace FormsApp
         {
 
             Graphics grafika = pictrOutput.CreateGraphics();
+            Random rnd = new Random();
 
-            
+
+
 
             Pen limeP = new Pen(Color.Lime, 10);
 
 
 
-            Brush maroonBrush = new SolidBrush(Color.White);
+            //Brush maroonBrush = new SolidBrush(Color.White);
+
             kresliAjajaj();
 
             void kresliAjajaj()
@@ -37,9 +40,13 @@ namespace FormsApp
                 int size = pictrOutput.Width;
                 int sizeExtension = size / 10;
 
-                for (int i = 0; i <= 10; i++)
+                for (int i = 11; i >= 1; i--)
                 {
+                    limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
                     grafika.DrawRectangle(limeP, 0, 0, sizeExtension*i, sizeExtension*i);
+                    //maroonBrush.Color 
+                    Brush maroonBrush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
+                    grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
                     //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
                 }
             }
