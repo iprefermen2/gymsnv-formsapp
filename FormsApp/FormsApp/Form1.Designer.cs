@@ -38,11 +38,11 @@
             this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnStart.ForeColor = System.Drawing.Color.IndianRed;
-            this.btnStart.Location = new System.Drawing.Point(12, 12);
+            this.btnStart.Location = new System.Drawing.Point(12, 37);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(138, 46);
             this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Press Me!";
+            this.btnStart.Text = "LD";
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
