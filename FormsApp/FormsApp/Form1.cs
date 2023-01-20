@@ -21,9 +21,9 @@ namespace FormsApp
         private void btnStart_Click(object sender, EventArgs e)
         {
             Graphics grafika = pictrOutput.CreateGraphics();
-            Pen limeP = new Pen(Color.Lime, 5);
-            grafika.DrawLine(limeP, 50, 200, 350, 200);
-            
+            Pen limeP = new Pen(Color.Lime, 10);
+            grafika.DrawEllipse(limeP, 125, 125, 150, 150);
+
         }
     }
 }
