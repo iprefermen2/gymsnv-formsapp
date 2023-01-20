@@ -20,21 +20,29 @@ namespace FormsApp
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+
             Graphics grafika = pictrOutput.CreateGraphics();
-            Pen limeP = new Pen(Color.Black, 5);
+
+            
+
+            Pen limeP = new Pen(Color.Lime, 10);
+
+
+
             Brush maroonBrush = new SolidBrush(Color.White);
+            kresliAjajaj();
 
-            grafika.DrawEllipse(limeP, 150, 280, 100, 100);
-            grafika.FillEllipse(maroonBrush,150,280,100,100);
+            void kresliAjajaj()
+            {
+                int size = pictrOutput.Width;
+                int sizeExtension = size / 10;
 
-            grafika.DrawEllipse(limeP, 160, 200, 80, 80);
-            grafika.FillEllipse(maroonBrush, 160, 200, 80, 80);
-
-            grafika.DrawEllipse(limeP, 170, 140, 60, 60);
-            grafika.FillEllipse(maroonBrush, 170, 140, 60, 60);
-
-            grafika.DrawRectangle(limeP, 180, 100, 40, 40);
-            grafika.FillRectangle(maroonBrush, 180, 100, 40, 40);
+                for (int i = 0; i <= 10; i++)
+                {
+                    grafika.DrawRectangle(limeP, 0, 0, sizeExtension*i, sizeExtension*i);
+                    //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
+                }
+            }
 
             
 
