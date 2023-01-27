@@ -33,10 +33,7 @@ namespace FormsApp
 
             //Brush maroonBrush = new SolidBrush(Color.White);
 
-            kresliAjajaj();
-
-            void kresliAjajaj()
-            {
+            
                 int size = pictrOutput.Width;
                 int sizeExtension = size / 10;
 
@@ -49,54 +46,86 @@ namespace FormsApp
                     grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
                     //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
                 }
-            }
+                     
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Graphics grafika = pictrOutput.CreateGraphics();
+            Random rnd = new Random();
+
+
+
+
+            Pen limeP = new Pen(Color.Lime, 10);
+
             
-void kresliAjajaj2()
-            {
                 int size = pictrOutput.Width;
                 int sizeExtension = size / 10;
 
                 for (int i = 0; i <= 10; i++)
                 {
                     limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
-                    grafika.DrawRectangle(limeP, 0+(sizeExtension*i), 0, size-(sizeExtension*i), size-(sizeExtension*i));
+                    grafika.DrawRectangle(limeP, 0 + (sizeExtension * i), 0, size - (sizeExtension * i), size - (sizeExtension * i));
                     //maroonBrush.Color 
                     Brush maroonBrush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
-                    grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
+                    grafika.FillRectangle(maroonBrush, 0 + (sizeExtension * i), 0, size - (sizeExtension * i), size - (sizeExtension * i));
                     //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
                 }
-            }
-void kresliAjajaj3()
-            {
+
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Graphics grafika = pictrOutput.CreateGraphics();
+            Random rnd = new Random();
+
+
+
+
+            Pen limeP = new Pen(Color.Lime, 10);
+            
                 int size = pictrOutput.Width;
                 int sizeExtension = size / 10;
 
                 for (int i = 0; i <= 10; i++)
                 {
                     limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
-                    grafika.DrawRectangle(limeP, 0+(sizeExtension*i), 0+(sizeExtension*i), size-(sizeExtension*i), size-(sizeExtension*i));
+                    grafika.DrawRectangle(limeP, 0 + (sizeExtension * i), 0 + (sizeExtension * i), size - (sizeExtension * i), size - (sizeExtension * i));
                     //maroonBrush.Color 
                     Brush maroonBrush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
-                    grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
+                    grafika.FillRectangle(maroonBrush, 0 + (sizeExtension * i), 0 + (sizeExtension * i), size - (sizeExtension * i), size - (sizeExtension * i));
                     //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
                 }
-            }
-void kresliAjajaj4()
-            {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            Graphics grafika = pictrOutput.CreateGraphics();
+            Random rnd = new Random();
+
+
+
+
+            Pen limeP = new Pen(Color.Lime, 10);
+           
                 int size = pictrOutput.Width;
                 int sizeExtension = size / 10;
 
                 for (int i = 0; i <= 10; i++)
                 {
                     limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
-                    grafika.DrawRectangle(limeP, 0, 0+(sizeExtension*i), size-(sizeExtension*i), size-(sizeExtension*i));
+                    grafika.DrawRectangle(limeP, 0, 0 + (sizeExtension * i), size - (sizeExtension * i), size - (sizeExtension * i));
                     //maroonBrush.Color 
                     Brush maroonBrush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
-                    grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
+                    grafika.FillRectangle(maroonBrush,0,0 + (sizeExtension * i), size - (sizeExtension * i), size - (sizeExtension * i));
                     //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
                 }
-            }
-
+            
         }
     }
 }
