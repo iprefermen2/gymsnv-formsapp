@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace FormsApp
 {
-    public partial class workForm : Form
+    public partial class Form1 : Form
     {
         bool stavKreslenia = false;
         int mouseOldX = 0;
         int mouseOldY = 0;
-        public workForm()
+
+        Pen coloredPen = new Pen(Color.Lime, 20);
+        public Form1()
         {
             //pri vzniku okna
             InitializeComponent();
@@ -25,8 +27,7 @@ namespace FormsApp
         {
             Graphics grafika = pictrOutput.CreateGraphics();
             //Random rnd = new Random();
-
-            Pen coloredPen = new Pen(Color.Lime, 20);
+           
             int  mouseFetchX, mouseFetchY;
             
 
@@ -67,8 +68,13 @@ namespace FormsApp
 
         private void buttonColor_Click(object sender, EventArgs e)
         {
-            //workForm.ShowDialog();
+            colorDialog1.ShowDialog();
+            coloredPen.Color = colorDialog1.Color;
+        }
 
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            coloredPen.Width = trackBar1.Value;
         }
     }
 }

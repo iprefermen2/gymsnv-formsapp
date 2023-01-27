@@ -1,6 +1,6 @@
 ﻿namespace FormsApp
 {
-    partial class workForm
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,10 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.pictrOutput = new System.Windows.Forms.PictureBox();
             this.buttonColor = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictrOutput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
@@ -65,21 +68,34 @@
             this.buttonColor.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonColor.Location = new System.Drawing.Point(21, 89);
             this.buttonColor.Name = "buttonColor";
-            this.buttonColor.Size = new System.Drawing.Size(129, 348);
+            this.buttonColor.Size = new System.Drawing.Size(129, 117);
             this.buttonColor.TabIndex = 2;
             this.buttonColor.Text = "Farba\r\n";
             this.buttonColor.UseVisualStyleBackColor = false;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
             // 
-            // workForm
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(12, 278);
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(138, 45);
+            this.trackBar1.TabIndex = 3;
+            this.trackBar1.Value = 1;
+            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
+            // 
+            // Form1
             // 
             this.ClientSize = new System.Drawing.Size(596, 465);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.buttonColor);
             this.Controls.Add(this.pictrOutput);
             this.Controls.Add(this.btnStart);
-            this.Name = "workForm";
+            this.Name = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictrOutput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -89,6 +105,8 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.PictureBox pictrOutput;
         private System.Windows.Forms.Button buttonColor;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 
