@@ -64,23 +64,32 @@ namespace FormsApp
 
 
 
-                //Brush maroonBrush = new SolidBrush(Color.White);
 
+            Brush maroonBrush = new SolidBrush(Color.White);
+            var brush = maroonBrush as SolidBrush;
 
-                int size = pictrOutput.Width;
+            int size = pictrOutput.Width;
                 int sizeExtension = size / 8;
+                    for(int i = 0; i <= 8; i++)
+                    {
+                if(i % 2 == 0)
+                {
+                    brush.Color = Color.Red;
+                }
+                else
+                {
+                     brush.Color =  Color.Blue;
+                }
 
-                
-                    limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
-                    grafika.DrawRectangle(limeP, 0, 0, sizeExtension, sizeExtension );
-                    //maroonBrush.Color 
-                    Brush maroonBrush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
-                    grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension , sizeExtension );
-                    //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
-                
+                // limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
+                //grafika.DrawRectangle(limeP, 0, 0, sizeExtension, sizeExtension );
+                //maroonBrush.Color 
+                //brush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
+                grafika.FillRectangle(brush, sizeExtension*i, 0, sizeExtension, sizeExtension);
+                //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
 
-
-            
+                }       
+                     
         }
     }
 }
