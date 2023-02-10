@@ -23,82 +23,9 @@ namespace FormsApp
             InitializeComponent();
         }
 
-        public void kresli(MouseEventArgs e)
+        private void btnCalculate_Click(object sender, EventArgs e)
         {
-            Graphics grafika = pictrOutput.CreateGraphics();
-            //Random rnd = new Random();
            
-            int  mouseFetchX, mouseFetchY;
-            
-
-            mouseFetchX = e.X;
-            mouseFetchY = e.Y;
-
-            if (stavKreslenia == true)
-            {
-                grafika.DrawLine(coloredPen, mouseOldX, mouseOldY, mouseFetchX, mouseFetchY);
-            }
-            mouseOldX = mouseFetchX;
-            mouseOldY = mouseFetchY;
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            pictrOutput.Image = null;     
-        }
-
-
-
-        private void btnPaint_Click(object sender, EventArgs e)
-        {
-            
-
-                Graphics grafika = pictrOutput.CreateGraphics();
-                Random rnd = new Random();
-
-
-
-
-                Pen limeP = new Pen(Color.Lime, 10);
-
-
-
-
-            Brush maroonBrush = new SolidBrush(Color.White);
-            var brush = maroonBrush as SolidBrush;
-
-            int size = pictrOutput.Width;
-                int sizeExtension = size / 8;
-            for(int j = 0; j <= 9; j++)
-            {
-                for (int i = 0; i <= 8; i++)
-                {                  
-                    if((i+j)%3 == 0)
-                    {
-                        brush.Color = Color.Blue;
-                    }
-                    else
-                    {
-                        if ((i + j) % 2 == 0)
-                        {
-                            brush.Color = Color.Red;
-                        }
-                        else
-                        {
-                            brush.Color = Color.Yellow;
-                        }               
-                    }
-
-                    // limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
-                    //grafika.DrawRectangle(limeP, 0, 0, sizeExtension, sizeExtension );
-                    //maroonBrush.Color 
-                    //brush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
-                    grafika.FillRectangle(brush, sizeExtension * i, sizeExtension*j, sizeExtension, sizeExtension);
-                    //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
-
-                }
-            }                                          
         }
     }
 }
