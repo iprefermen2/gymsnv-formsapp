@@ -73,18 +73,21 @@ namespace FormsApp
             for(int j = 0; j <= 9; j++)
             {
                 for (int i = 0; i <= 8; i++)
-                {
-                    if ((i+j) % 2 == 0)
+                {                  
+                    if((i+j)%3 == 0)
                     {
-                        brush.Color = Color.Red;
+                        brush.Color = Color.Blue;
                     }
-                    //else if(i%3 == 0)
-                    //{
-                    //    brush.Color = Color.Blue;
-                    //}
                     else
                     {
-                        brush.Color = Color.Yellow;
+                        if ((i + j) % 2 == 0)
+                        {
+                            brush.Color = Color.Red;
+                        }
+                        else
+                        {
+                            brush.Color = Color.Yellow;
+                        }               
                     }
 
                     // limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
