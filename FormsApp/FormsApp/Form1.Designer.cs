@@ -33,6 +33,7 @@
             this.txtInput = new System.Windows.Forms.TextBox();
             this.labelOutput = new System.Windows.Forms.Label();
             this.labelList = new System.Windows.Forms.Label();
+            this.txtOutput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCalculate
@@ -71,9 +72,17 @@
             this.labelList.TabIndex = 5;
             this.labelList.Text = "Zoznam delitelov:";
             // 
+            // txtOutput
+            // 
+            this.txtOutput.Location = new System.Drawing.Point(245, 167);
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.Size = new System.Drawing.Size(278, 20);
+            this.txtOutput.TabIndex = 6;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(596, 465);
+            this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.labelList);
             this.Controls.Add(this.labelOutput);
             this.Controls.Add(this.txtInput);
@@ -90,6 +99,7 @@
         private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.Label labelOutput;
         private System.Windows.Forms.Label labelList;
+        private System.Windows.Forms.TextBox txtOutput;
     }
 }
 

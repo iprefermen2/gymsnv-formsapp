@@ -25,7 +25,29 @@ namespace FormsApp
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-           
+           int number = Convert.ToInt32(txtInput.Text);
+            bool prvocislo = true;
+           for(int i =2; i < number; i++)
+           {
+                if((number % i) != 0)
+                {
+                    prvocislo = false;
+                }
+                else
+                {
+                    prvocislo = true;
+                }
+           }
+           if(prvocislo == true)
+            {
+                txtOutput.Text = "Je to prvocislo";
+            }
+            else
+            {
+                txtOutput.Text = "Nie je prvocislo";
+            }
+
+
         }
     }
 }
