@@ -70,26 +70,32 @@ namespace FormsApp
 
             int size = pictrOutput.Width;
                 int sizeExtension = size / 8;
-                    for(int i = 0; i <= 8; i++)
+            for(int j = 0; j <= 9; j++)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    if ((i+j) % 2 == 0)
                     {
-                if(i % 2 == 0)
-                {
-                    brush.Color = Color.Red;
-                }
-                else
-                {
-                     brush.Color =  Color.Blue;
-                }
+                        brush.Color = Color.Red;
+                    }
+                    //else if(i%3 == 0)
+                    //{
+                    //    brush.Color = Color.Blue;
+                    //}
+                    else
+                    {
+                        brush.Color = Color.Yellow;
+                    }
 
-                // limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
-                //grafika.DrawRectangle(limeP, 0, 0, sizeExtension, sizeExtension );
-                //maroonBrush.Color 
-                //brush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
-                grafika.FillRectangle(brush, sizeExtension*i, 0, sizeExtension, sizeExtension);
-                //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
+                    // limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
+                    //grafika.DrawRectangle(limeP, 0, 0, sizeExtension, sizeExtension );
+                    //maroonBrush.Color 
+                    //brush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
+                    grafika.FillRectangle(brush, sizeExtension * i, sizeExtension*j, sizeExtension, sizeExtension);
+                    //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
 
-                }       
-                     
+                }
+            }                                          
         }
     }
 }
