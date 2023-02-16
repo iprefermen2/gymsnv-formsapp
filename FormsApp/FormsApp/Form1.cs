@@ -38,7 +38,7 @@ namespace FormsApp
 
             }
 
-            if (prvocislo = true)
+            if (prvocislo == true)
             {
                 txtOutput.Text = "Je to prvocislo";
             }
