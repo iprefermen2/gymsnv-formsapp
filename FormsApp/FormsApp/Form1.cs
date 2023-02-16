@@ -22,31 +22,48 @@ namespace FormsApp
             //pri vzniku okna
             InitializeComponent();
         }
-        
-            
 
-           private void btnCalculate_Click(object sender, EventArgs e) {
-          
 
+
+        private void btnCalculate_Click(object sender, EventArgs e) {
+
+
+
+            bool prvocislo = true;
             int number = Convert.ToInt32(txtInput.Text);
-            bool prvocislo = false;
+
+
+            int[] delitele = new int[2];
+            int j = 0;
 
             for (int i = 2; i < number; i++)
             {
-                if (number % i == 0) { prvocislo = false; }
-                else { prvocislo = true; }
-
+                delitele[0] = 1;
+                
+                if ((number % i) == 0) 
+                { 
+                    prvocislo = false;
+                    j++;
+                    Array.Resize(ref delitele, delitele.Length + 1);
+                    delitele[j] = i;                
+                }
+                delitele[j + 1] = number;
             }
 
             if (prvocislo == true)
             {
                 txtOutput.Text = "Je to prvocislo";
             }
-            else
+            else if(prvocislo == false)
             {
                 txtOutput.Text = "Nie je prvocislo";
             }
 
+
+
+                string result = String.Join(",", delitele);
+                labelList.Text = $"Zoznam delitelov: { result }";
+            
 
 
 
