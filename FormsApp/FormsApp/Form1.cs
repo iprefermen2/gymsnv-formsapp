@@ -16,33 +16,21 @@ namespace FormsApp
         int mouseOldX = 0;
         int mouseOldY = 0;
 
-        Pen coloredPen = new Pen(Color.Lime, 20);
+        Pen coloredPen = new Pen(Color.Lime, 2);
         public Form1()
         {
             //pri vzniku okna
             InitializeComponent();
         }
 
-        public void kresli(MouseEventArgs e)
-        {
-            Graphics grafika = pictrOutput.CreateGraphics();
-            //Random rnd = new Random();
-           
-            int  mouseFetchX, mouseFetchY;
-            
+        float x1 = 0;
+        float y1 = 0;
+        
+        float y2 = 0;
+        float top = 200;
 
-            mouseFetchX = e.X;
-            mouseFetchY = e.Y;
-
-            if (stavKreslenia == true)
-            {
-                grafika.DrawLine(coloredPen, mouseOldX, mouseOldY, mouseFetchX, mouseFetchY);
-            }
-            mouseOldX = mouseFetchX;
-            mouseOldY = mouseFetchY;
-
-        }
-
+        float eX = 20; //size multiplayer
+        float eY = 200;
         private void btnDelete_Click(object sender, EventArgs e)
         {
             pictrOutput.Image = null;     
@@ -51,51 +39,19 @@ namespace FormsApp
 
 
         private void btnPaint_Click(object sender, EventArgs e)
-        {
-            
+        {          
+            Graphics grafika = pictrOutput.CreateGraphics();
 
-                Graphics grafika = pictrOutput.CreateGraphics();
-                Random rnd = new Random();
-
-
-
-
-                Pen limeP = new Pen(Color.Lime, 10);
-
-
-
-
-            Brush maroonBrush = new SolidBrush(Color.White);
-            var brush = maroonBrush as SolidBrush;
-
-            int size = pictrOutput.Width;
-                int sizeExtension = size / 8;
-            for(int j = 0; j <= 9; j++)
+            for (float x = 0; x < 400; x += 0.1F)
             {
-                for (int i = 0; i <= 8; i++)
-                {
-                    if ((i+j) % 2 == 0)
-                    {
-                        brush.Color = Color.Red;
-                    }
-                    //else if(i%3 == 0)
-                    //{
-                    //    brush.Color = Color.Blue;
-                    //}
-                    else
-                    {
-                        brush.Color = Color.Yellow;
-                    }
+                y2 = (float)Math.Sin(x);
 
-                    // limeP.Color = Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256));
-                    //grafika.DrawRectangle(limeP, 0, 0, sizeExtension, sizeExtension );
-                    //maroonBrush.Color 
-                    //brush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
-                    grafika.FillRectangle(brush, sizeExtension * i, sizeExtension*j, sizeExtension, sizeExtension);
-                    
+                grafika.DrawLine(coloredPen, x1 * eX, y1 * eY + top, x * eX, y2 * eY + top);
 
-                }
-            }                                          
+                x1 = x;
+                y1 = y2;
+            }
+                                                      
         }
     }
 }
