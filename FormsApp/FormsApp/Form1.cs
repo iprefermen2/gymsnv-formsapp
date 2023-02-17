@@ -92,7 +92,7 @@ namespace FormsApp
                     //maroonBrush.Color 
                     //brush = new SolidBrush(Color.FromArgb(rnd.Next(0, 256), rnd.Next(0, 256), rnd.Next(0, 256)));
                     grafika.FillRectangle(brush, sizeExtension * i, sizeExtension*j, sizeExtension, sizeExtension);
-                    //grafika.FillRectangle(maroonBrush, 0, 0, sizeExtension * i, sizeExtension * i);
+                    
 
                 }
             }                                          
