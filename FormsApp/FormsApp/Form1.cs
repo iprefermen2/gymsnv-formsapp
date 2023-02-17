@@ -23,14 +23,7 @@ namespace FormsApp
             InitializeComponent();
         }
 
-        float x1 = 0;
-        float y1 = 0;
         
-        float y2 = 0;
-        float top = 200;
-
-        float eX = 20; //size multiplayer
-        float eY = 200;
         private void btnDelete_Click(object sender, EventArgs e)
         {
             pictrOutput.Image = null;     
@@ -39,14 +32,24 @@ namespace FormsApp
 
 
         private void btnPaint_Click(object sender, EventArgs e)
-        {          
+        {
+
+            float x1 = 0;
+            float y1 = 0;
+
+            float y2 = 0;
+            float top = 200;
+
+            float eX = 20; //size multiplayer
+            float eY = 200;
+
             Graphics grafika = pictrOutput.CreateGraphics();
 
             for (float x = 0; x < 400; x += 0.1F)
             {
                 y2 = (float)Math.Sin(x);
 
-                grafika.DrawLine(coloredPen, x1 * eX, y1 * eY + top, x * eX, y2 * eY + top);
+                grafika.DrawLine(coloredPen, x1*eX , y1*eX  + top, x*eX,  y2 *eX + top);
 
                 x1 = x;
                 y1 = y2;
