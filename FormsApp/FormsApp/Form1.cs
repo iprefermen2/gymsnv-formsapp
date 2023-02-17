@@ -41,7 +41,7 @@ namespace FormsApp
             float top = 200;
 
             float eX = 20; //size multiplayer
-            float eY = 200;
+            float eY = 150;
 
             Graphics grafika = pictrOutput.CreateGraphics();
 
@@ -49,7 +49,7 @@ namespace FormsApp
             {
                 y2 = (float)Math.Sin(x);
 
-                grafika.DrawLine(coloredPen, x1*eX , y1*eX  + top, x*eX,  y2 *eX + top);
+                grafika.DrawLine(coloredPen, x1*eX , y1*eY  + top, x*eX,  y2 *eY + top);
 
                 x1 = x;
                 y1 = y2;
