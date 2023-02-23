@@ -12,18 +12,64 @@ namespace FormsApp
 {
     public partial class Form1 : Form
     {
-        bool stavKreslenia = false;
-        int mouseOldX = 0;
-        int mouseOldY = 0;
+        
 
         Pen coloredPen = new Pen(Color.Lime, 2);
+        
         public Form1()
         {
             //pri vzniku okna
             InitializeComponent();
         }
 
+        public void paintSin(string lambda, string ym, bool sin)
+        {
+            Graphics mg = pictrOutput.CreateGraphics();
+
+            double vlnovaDlzka = Convert.ToInt32(lambda);
+            double amplituda = Convert.ToInt32(ym);
+            double sirka = pictrOutput.Width;
+            double vyska = pictrOutput.Height;
+
+            double xAddition = 0;
+            double yBefore = 0;
+
+            int y = 0;
+            int xGold = 0;
+            int yGold = (int)vyska / 2;
+
+            for (int x = 0; x <= sirka; x++)
+            {
+
+
+                xAddition = xAddition + Math.PI * 2 / vlnovaDlzka;
+
+
+
+
+                yBefore = Math.Sin(xAddition);
+
+
+
+                if(sin)
+                y = (int)((vyska / 2) - (yBefore * amplituda));
+                else
+                    y = (int)((vyska / 2) + (yBefore * amplituda));
+
+
+
+                mg.DrawLine(coloredPen, xGold, yGold, x, y);
+
+                xGold = x;
+                yGold = y;
+
+
+            }
+        }
+
         
+
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             pictrOutput.Image = null;     
@@ -31,30 +77,16 @@ namespace FormsApp
 
 
 
-        private void btnPaint_Click(object sender, EventArgs e)
+        private void btnSin_Click(object sender, EventArgs e)
         {
-
-            float x1 = 0;
-            float y1 = 0;
-
-            float y2 = 0;
-            float top = 200;
-
-            float eX = 20; //size multiplayer
-            float eY = 150;
-
-            Graphics grafika = pictrOutput.CreateGraphics();
-
-            for (float x = 0; x < 400; x += 0.1F)
-            {
-                y2 = (float)Math.Sin(x);
-
-                grafika.DrawLine(coloredPen, x1*eX , y1*eY  + top, x*eX,  y2 *eY + top);
-
-                x1 = x;
-                y1 = y2;
-            }
-                                                      
+            paintSin(txtbxLambda.Text,txtbxYm.Text,true);                                                                 
         }
+
+        private void btnCos_Click(object sender, EventArgs e)
+        {
+            paintSin(txtbxLambda.Text, txtbxYm.Text, false);
+        }
+
+        
     }
 }
