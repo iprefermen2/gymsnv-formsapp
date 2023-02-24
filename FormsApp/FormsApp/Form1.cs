@@ -60,7 +60,7 @@ namespace FormsApp
         }
 
         //daco tu ma byt ze to mame dat akoze do nejake fyzikalne dacoho ze napr ked mam nieco od 20 do 380 tak to znamena ze na fyz to bude
-        //-2 az 2 alebo nejake ine cisla neviem presne akoze co ale daco taketo podobne 
+        //-2 az 2 alebo nejake ine cisla neviem presne akoze co ale daco taketo podobne asi 
 
         public double getXAngle()
         {
