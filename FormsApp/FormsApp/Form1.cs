@@ -46,23 +46,29 @@ namespace FormsApp
             InitializeComponent();
         }
 
-        public void nullThings()
+        public void nullThings(int start)
         {
             xAddition = 0;
             yBefore = 0;
-            xGold = 0;
+            xGold = start;
             yGold = (int)getVyska() / 2;
         }
 
-        
+        public double getFyzRatio(double one, double two)
+        {
+            return two + Math.Abs(one);
+        }
+
+        //daco tu ma byt ze to mame dat akoze do nejake fyzikalne dacoho ze napr ked mam nieco od 20 do 380 tak to znamena ze na fyz to bude
+        //-2 az 2 alebo nejake ine cisla neviem presne akoze co ale daco taketo podobne asi 
 
         public double getXAngle()
         {
-            xAddition = xAddition + Math.PI * 2 / getVlnovaDlzka();
+            xAddition = xAddition + getFyzRatio(0,Math.PI*2) / getVlnovaDlzka();
             return xAddition; 
         }
 
-        public int getYValue(bool sin)
+        public int getYSinValue(bool sin)
         {
             yBefore = Math.Sin(getXAngle());
 
@@ -74,19 +80,16 @@ namespace FormsApp
                 return (int)((getVyska() / 2) + (yBefore * getAmplituda()));
         }
 
-        public void paintSin(bool sin)
+        public void paintSin(bool sin, int startPoint, int endPoint)
         {
-            nullThings();
+            nullThings(startPoint);
 
             Graphics mg = pictrOutput.CreateGraphics();          
-          
-          
-            int xGold = 0;
-            int yGold = (int)getVyska() / 2;
+                             
 
-            for (int x = 0; x <= getSirka(); x++)
+            for (int x = startPoint; x <= endPoint; x++)
             {
-                int y = getYValue(sin);             
+                int y = getYSinValue(sin);             
                 mg.DrawLine(coloredPen, xGold, yGold, x, y);
 
                 xGold = x;
@@ -106,12 +109,12 @@ namespace FormsApp
 
         private void btnSin_Click(object sender, EventArgs e)
         {            
-            paintSin(true);                                                                 
+            paintSin(true,20,380);                                                                 
         }
 
         private void btnCos_Click(object sender, EventArgs e)
         {
-            paintSin(false);
+            paintSin(false,20,380);
         }
 
         
