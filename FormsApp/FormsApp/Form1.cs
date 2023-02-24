@@ -15,55 +15,82 @@ namespace FormsApp
         
 
         Pen coloredPen = new Pen(Color.Lime, 2);
-        
+
+        public double getVlnovaDlzka()
+        {
+            return Convert.ToInt32(txtbxLambda.Text);
+        }
+
+        public double getAmplituda()
+        {
+            return Convert.ToInt32(txtbxYm.Text);
+        }
+
+        public int getVyska()
+        {
+            return Convert.ToInt32(pictrOutput.Height);
+        }
+        public int getSirka()
+        {
+            return Convert.ToInt32(pictrOutput.Width);
+        }
+
+        double xAddition = 0;
+        double yBefore = 0;
+        int xGold = 0;
+        int yGold;
+
         public Form1()
         {
             //pri vzniku okna
             InitializeComponent();
         }
 
-        public void paintSin(string lambda, string ym, bool sin)
+        public void nullThings()
         {
-            Graphics mg = pictrOutput.CreateGraphics();
+            xAddition = 0;
+            yBefore = 0;
+            xGold = 0;
+            yGold = (int)getVyska() / 2;
+        }
 
-            double vlnovaDlzka = Convert.ToInt32(lambda);
-            double amplituda = Convert.ToInt32(ym);
-            double sirka = pictrOutput.Width;
-            double vyska = pictrOutput.Height;
+        
 
-            double xAddition = 0;
-            double yBefore = 0;
+        public double getXAngle()
+        {
+            xAddition = xAddition + Math.PI * 2 / getVlnovaDlzka();
+            return xAddition; 
+        }
 
-            int y = 0;
+        public int getYValue(bool sin)
+        {
+            yBefore = Math.Sin(getXAngle());
+
+
+
+            if (sin)
+               return (int)((getVyska() / 2) - (yBefore * getAmplituda()));
+            else
+                return (int)((getVyska() / 2) + (yBefore * getAmplituda()));
+        }
+
+        public void paintSin(bool sin)
+        {
+            nullThings();
+
+            Graphics mg = pictrOutput.CreateGraphics();          
+          
+          
             int xGold = 0;
-            int yGold = (int)vyska / 2;
+            int yGold = (int)getVyska() / 2;
 
-            for (int x = 0; x <= sirka; x++)
+            for (int x = 0; x <= getSirka(); x++)
             {
-
-
-                xAddition = xAddition + Math.PI * 2 / vlnovaDlzka;
-
-
-
-
-                yBefore = Math.Sin(xAddition);
-
-
-
-                if(sin)
-                y = (int)((vyska / 2) - (yBefore * amplituda));
-                else
-                    y = (int)((vyska / 2) + (yBefore * amplituda));
-
-
-
+                int y = getYValue(sin);             
                 mg.DrawLine(coloredPen, xGold, yGold, x, y);
 
                 xGold = x;
                 yGold = y;
-
-
             }
         }
 
@@ -78,13 +105,13 @@ namespace FormsApp
 
 
         private void btnSin_Click(object sender, EventArgs e)
-        {
-            paintSin(txtbxLambda.Text,txtbxYm.Text,true);                                                                 
+        {            
+            paintSin(true);                                                                 
         }
 
         private void btnCos_Click(object sender, EventArgs e)
         {
-            paintSin(txtbxLambda.Text, txtbxYm.Text, false);
+            paintSin(false);
         }
 
         
