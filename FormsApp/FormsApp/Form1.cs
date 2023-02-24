@@ -62,6 +62,8 @@ namespace FormsApp
         //daco tu ma byt ze to mame dat akoze do nejake fyzikalne dacoho ze napr ked mam nieco od 20 do 380 tak to znamena ze na fyz to bude
         //-2 az 2 alebo nejake ine cisla neviem presne akoze co ale daco taketo podobne asi 
 
+
+        //urobit nejake dve funckie, nie pre realne cisla abysme mohli davat a zacat 2pi tripi cidaco take
         public double getXAngle()
         {
             xAddition = xAddition + getFyzRatio(0,Math.PI*2) / getVlnovaDlzka();
