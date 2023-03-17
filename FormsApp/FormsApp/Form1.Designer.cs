@@ -51,7 +51,7 @@
             // 
             // pictrOutput
             // 
-            this.pictrOutput.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictrOutput.BackColor = System.Drawing.Color.Khaki;
             this.pictrOutput.Location = new System.Drawing.Point(167, 37);
             this.pictrOutput.Name = "pictrOutput";
             this.pictrOutput.Size = new System.Drawing.Size(400, 400);

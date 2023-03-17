@@ -16,10 +16,20 @@ namespace FormsApp
         int posX = 50;
         int posY = 300;
 
+        int sirka = 50;
+
+        int vx = 1;
+        int vy = -1;
+
+        public Form1()
+        {
+            InitializeComponent();
+            graphics = pictrOutput.CreateGraphics();
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            pictrOutput.Image = null;
-            graphics = pictrOutput.CreateGraphics();
+            pictrOutput.Image = null;           
         }
 
         private void btnFire_Click(object sender, EventArgs e)
@@ -41,12 +51,26 @@ namespace FormsApp
         {
             //nastav grafiku
 
+
             //zmazat gulu 
+            graphics.FillEllipse(Brushes.Khaki, posX, posY, sirka, sirka);
 
             //nakresli gulu novu
-            posX++;
-            posY--;
-            graphics.FillEllipse(Brushes.Red, posX, posY, 50, 50);
+
+            if(posX >= pictrOutput.Width-sirka || posX < 0)
+            {
+                vx = vx * -1;
+            }
+            if (posY >= pictrOutput.Height-sirka || posY < 0)
+            {
+                vy = vy * -1;
+            }
+
+            posX += 1*vx;
+            posY += 1*vy;
+            graphics.FillEllipse(Brushes.Red, posX, posY, sirka, sirka);
         }
+
+        
     }
 }
