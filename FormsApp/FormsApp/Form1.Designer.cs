@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pictrOutput = new System.Windows.Forms.PictureBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.timerStart = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictrOutput)).BeginInit();
@@ -91,7 +90,6 @@
 
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.PictureBox pictrOutput;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timerStart;
     }
