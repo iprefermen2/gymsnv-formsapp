@@ -33,6 +33,8 @@
             this.pictrOutput = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.timerStart = new System.Windows.Forms.Timer(this.components);
+            this.btnAccelerate = new System.Windows.Forms.Button();
+            this.btnBrake = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictrOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,9 +75,31 @@
             this.timerStart.Interval = 10;
             this.timerStart.Tick += new System.EventHandler(this.timerStart_Tick);
             // 
+            // btnAccelerate
+            // 
+            this.btnAccelerate.Location = new System.Drawing.Point(33, 234);
+            this.btnAccelerate.Name = "btnAccelerate";
+            this.btnAccelerate.Size = new System.Drawing.Size(75, 23);
+            this.btnAccelerate.TabIndex = 3;
+            this.btnAccelerate.Text = "zrychli";
+            this.btnAccelerate.UseVisualStyleBackColor = true;
+            this.btnAccelerate.Click += new System.EventHandler(this.btnAccelerate_Click);
+            // 
+            // btnBrake
+            // 
+            this.btnBrake.Location = new System.Drawing.Point(35, 273);
+            this.btnBrake.Name = "btnBrake";
+            this.btnBrake.Size = new System.Drawing.Size(75, 23);
+            this.btnBrake.TabIndex = 4;
+            this.btnBrake.Text = "spomal";
+            this.btnBrake.UseVisualStyleBackColor = true;
+            this.btnBrake.Click += new System.EventHandler(this.btnBrake_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(596, 465);
+            this.Controls.Add(this.btnBrake);
+            this.Controls.Add(this.btnAccelerate);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictrOutput);
             this.Controls.Add(this.btnDelete);
@@ -92,6 +116,8 @@
         private System.Windows.Forms.PictureBox pictrOutput;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timerStart;
+        private System.Windows.Forms.Button btnAccelerate;
+        private System.Windows.Forms.Button btnBrake;
     }
 }
 

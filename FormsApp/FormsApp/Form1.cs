@@ -18,6 +18,8 @@ namespace FormsApp
 
         int sirka = 50;
 
+        int speed = 1;
+
         int vx = 1;
         int vy = -1;
 
@@ -50,7 +52,7 @@ namespace FormsApp
         private void timerStart_Tick(object sender, EventArgs e)
         {
             //nastav grafiku
-
+            
 
             //zmazat gulu 
             graphics.FillEllipse(Brushes.Khaki, posX, posY, sirka, sirka);
@@ -66,11 +68,20 @@ namespace FormsApp
                 vy = vy * -1;
             }
 
-            posX += 1*vx;
-            posY += 1*vy;
+            posX += speed*vx;
+            posY += speed*vy;
             graphics.FillEllipse(Brushes.Red, posX, posY, sirka, sirka);
         }
 
-        
+        private void btnAccelerate_Click(object sender, EventArgs e)
+        {
+            speed++;
+        }
+
+        private void btnBrake_Click(object sender, EventArgs e)
+        {
+            if(speed > 0)
+            speed--;
+        }
     }
 }
