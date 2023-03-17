@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pictrOutput = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.button1 = new System.Windows.Forms.Button();
+            this.timerStart = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictrOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,9 +59,25 @@
             this.pictrOutput.TabIndex = 1;
             this.pictrOutput.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(21, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 58);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Strieľaj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnFire_Click);
+            // 
+            // timerStart
+            // 
+            this.timerStart.Interval = 10;
+            this.timerStart.Tick += new System.EventHandler(this.timerStart_Tick);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(596, 465);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictrOutput);
             this.Controls.Add(this.btnDelete);
             this.Name = "Form1";
@@ -73,6 +92,8 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.PictureBox pictrOutput;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timerStart;
     }
 }
 

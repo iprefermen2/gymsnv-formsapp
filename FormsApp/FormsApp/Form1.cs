@@ -18,7 +18,28 @@ namespace FormsApp
             pictrOutput.Image = null;     
         }
 
+        private void btnFire_Click(object sender, EventArgs e)
+        {
+            //nastartuj casovac
+            if(timerStart.Enabled)
+            {
+                timerStart.Enabled = false;
+            }
+            else
+            {
+                timerStart.Enabled = true;
+            }
+            //nakresli prvu gulu
+        }
 
-        
+        private void timerStart_Tick(object sender, EventArgs e)
+        {
+            //nastav grafiku
+
+            //zmazat gulu 
+
+            //nakresli gulu novu
+
+        }
     }
 }

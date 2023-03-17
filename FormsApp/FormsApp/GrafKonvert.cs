@@ -22,9 +22,11 @@ namespace FormsApp
         }
 
         //z Ygraf na Yfyz
+        
 
 
         //z Xfyz na Xgraf
+        
 
 
         //z Yfyz na Ygraf
