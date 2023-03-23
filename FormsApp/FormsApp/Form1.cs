@@ -23,10 +23,34 @@ namespace FormsApp
         int vx = 1;
         int vy = -1;
 
+        int xfmin, xfmax, yfmin,yfmax;
+
+        int gxmax, gymax;
+
+        int vzdialenost;
+
+        float pomerx, pomery, num;
+
         public Form1()
         {
             InitializeComponent();
             graphics = pictrOutput.CreateGraphics();
+
+            xfmin = 0;
+            xfmax = 200;
+            yfmin = 0;
+            yfmax = 100;    
+
+            gxmax = pictrOutput.Width;
+            gymax = pictrOutput.Height;
+
+            pomerx = (xfmax-xfmin)/gxmax;
+            pomery = (yfmax-yfmin)/gymax;
+
+
+            vzdialenost = 100;
+
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -36,8 +60,10 @@ namespace FormsApp
 
         private void btnFire_Click(object sender, EventArgs e)
         {
+
+             num = 0;
             //nastartuj casovac
-            if(timerStart.Enabled)
+            if (timerStart.Enabled)
             {
                 timerStart.Enabled = false;
             }
@@ -52,14 +78,20 @@ namespace FormsApp
         private void timerStart_Tick(object sender, EventArgs e)
         {
             //nastav grafiku
-            
+
 
             //zmazat gulu 
             graphics.FillEllipse(Brushes.Khaki, posX, posY, sirka, sirka);
 
             //nakresli gulu novu
 
-            if(posX >= pictrOutput.Width-sirka || posX < 0)
+            if (num > 200f)
+            {
+                timerStart.Enabled = false;
+            }
+            
+
+            if (posX >= pictrOutput.Width-sirka || posX < 0)
             {
                 vx = vx * -1;
             }
@@ -69,7 +101,8 @@ namespace FormsApp
             }
 
             posX += speed*vx;
-            posY += speed*vy;
+            // posY += speed*vy;
+            num += 1f; 
             graphics.FillEllipse(Brushes.Red, posX, posY, sirka, sirka);
         }
 

@@ -35,6 +35,8 @@
             this.timerStart = new System.Windows.Forms.Timer(this.components);
             this.btnAccelerate = new System.Windows.Forms.Button();
             this.btnBrake = new System.Windows.Forms.Button();
+            this.txtMin = new System.Windows.Forms.TextBox();
+            this.txtMax = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictrOutput)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,9 +97,25 @@
             this.btnBrake.UseVisualStyleBackColor = true;
             this.btnBrake.Click += new System.EventHandler(this.btnBrake_Click);
             // 
+            // txtMin
+            // 
+            this.txtMin.Location = new System.Drawing.Point(35, 320);
+            this.txtMin.Name = "txtMin";
+            this.txtMin.Size = new System.Drawing.Size(75, 20);
+            this.txtMin.TabIndex = 5;
+            // 
+            // txtMax
+            // 
+            this.txtMax.Location = new System.Drawing.Point(33, 363);
+            this.txtMax.Name = "txtMax";
+            this.txtMax.Size = new System.Drawing.Size(100, 20);
+            this.txtMax.TabIndex = 6;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(596, 465);
+            this.Controls.Add(this.txtMax);
+            this.Controls.Add(this.txtMin);
             this.Controls.Add(this.btnBrake);
             this.Controls.Add(this.btnAccelerate);
             this.Controls.Add(this.button1);
@@ -106,6 +124,7 @@
             this.Name = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictrOutput)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,6 +137,8 @@
         private System.Windows.Forms.Timer timerStart;
         private System.Windows.Forms.Button btnAccelerate;
         private System.Windows.Forms.Button btnBrake;
+        private System.Windows.Forms.TextBox txtMin;
+        private System.Windows.Forms.TextBox txtMax;
     }
 }
 
