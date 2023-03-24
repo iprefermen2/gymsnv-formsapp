@@ -13,7 +13,7 @@ namespace FormsApp
     public partial class Form1 : Form
     {
         Graphics graphics;
-
+        CGrafPrevod conversion = new CGrafPrevod();
 
 
         int posX = 50;
@@ -23,13 +23,19 @@ namespace FormsApp
         double fposy = 100;
 
         double fspeed = 0;
+        double interval = 0.01;
+
 
         int sirka = 50;
 
         int speed = 1;
 
-        int vx = 1;
-        int vy = -1;
+        double vx = 100;
+        double vy = 200;
+
+        double ax = 0;
+        double ay = 9.81;
+
 
         public Form1()
         {
@@ -45,7 +51,7 @@ namespace FormsApp
         private void btnFire_Click(object sender, EventArgs e)
         {
             //nastartuj casovac
-            if(timerStart.Enabled)
+            if (timerStart.Enabled)
             {
                 timerStart.Enabled = false;
             }
@@ -55,6 +61,13 @@ namespace FormsApp
             }
             //nakresli prvu gulu
             graphics.FillEllipse(Brushes.Red, posX, posY, 50, 50);
+
+            //hraniciari 
+            interval = (double)timerStart.Interval / 1000;
+            conversion.ZadajHraniceX(0, pictrOutput.Width, 0, 5000);
+            conversion.ZadajHraniceY(0,pictrOutput.Height,0,3000);
+
+
         }
 
         private void timerStart_Tick(object sender, EventArgs e)
@@ -68,18 +81,25 @@ namespace FormsApp
             //nakresli gulu novu
 
             //24.3--------------------------------------------------------------------------------------------------------------
-            //vypocitaj xFyz a zFyz
+            //zrychlenie
             
 
 
+            
+
+            //rychlost
+            vx = vx + ax * interval;
+            vy = vy + ay * interval;
 
 
-
-
+            //vypocitaj xFyz a zFyz
+            fposx = fposx + vx * interval;
+            fposy = fposy + vy * interval;
 
 
             //premen na xGraf a yGraf
-
+            posX = conversion.XmathToGraf(fposx);
+            posY = conversion.YMathToGraf(fposy);
 
 
 
@@ -92,29 +112,20 @@ namespace FormsApp
 
 
             //17.3
-            if(posX >= pictrOutput.Width-sirka || posX < 0)
-            {
-                vx = vx * -1;
-            }
-            if (posY >= pictrOutput.Height-sirka || posY < 0)
-            {
-                vy = vy * -1;
-            }
-
-            posX += speed*vx;
-            posY += speed*vy;
+            //posX += vx;
+            //posY += vy;
             graphics.FillEllipse(Brushes.Red, posX, posY, sirka, sirka);
         }
 
         private void btnAccelerate_Click(object sender, EventArgs e)
         {
-            speed++;
+            vx++;
         }
 
         private void btnBrake_Click(object sender, EventArgs e)
         {
             if(speed > 0)
-            speed--;
+            vx--;
         }
     }
 }
