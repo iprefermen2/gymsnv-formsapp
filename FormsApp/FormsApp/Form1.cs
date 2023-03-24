@@ -13,8 +13,16 @@ namespace FormsApp
     public partial class Form1 : Form
     {
         Graphics graphics;
+
+
+
         int posX = 50;
         int posY = 300;
+
+        double fposx = 100;
+        double fposy = 100;
+
+        double fspeed = 0;
 
         int sirka = 50;
 
@@ -59,6 +67,31 @@ namespace FormsApp
 
             //nakresli gulu novu
 
+            //24.3--------------------------------------------------------------------------------------------------------------
+            //vypocitaj xFyz a zFyz
+            
+
+
+
+
+
+
+
+
+            //premen na xGraf a yGraf
+
+
+
+
+
+
+
+
+
+
+
+
+            //17.3
             if(posX >= pictrOutput.Width-sirka || posX < 0)
             {
                 vx = vx * -1;
