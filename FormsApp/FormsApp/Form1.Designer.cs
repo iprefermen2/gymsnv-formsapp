@@ -59,7 +59,7 @@
             this.pictrOutput.Size = new System.Drawing.Size(500, 400);
             this.pictrOutput.TabIndex = 1;
             this.pictrOutput.TabStop = false;
-            this.pictrOutput.Click += new System.EventHandler(this.pictrOutput_Click);
+            this.pictrOutput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictrOutput_MouseClick);
             // 
             // button1
             // 

@@ -148,20 +148,21 @@ namespace FormsApp
         
         
 
-        private void pictrOutput_Click(object sender, MouseEventArgs e)
+
+
+        private void pictrOutput_MouseClick(object sender, MouseEventArgs e)
         {
             // Calculate the new velocity based on the clicked position
             double dx = e.X - posX;
             double dy = posY - e.Y;
             double distance = Math.Sqrt(dx * dx + dy * dy);
-            double speed = 50000; // Set the speed of the ball
+            double speed = 500; // Set the speed of the ball
             double newVx = speed * dx / distance;
             double newVy = speed * dy / distance;
 
             // Set the new velocity
             vx = newVx;
             vy = newVy;
-
         }
     }
 }
