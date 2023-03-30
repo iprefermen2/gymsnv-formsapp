@@ -60,6 +60,7 @@
             this.pictrOutput.TabIndex = 1;
             this.pictrOutput.TabStop = false;
             this.pictrOutput.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictrOutput_MouseClick);
+            this.pictrOutput.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictrOutput_MouseMove);
             // 
             // button1
             // 

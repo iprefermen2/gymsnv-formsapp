@@ -12,6 +12,9 @@ namespace FormsApp
 {
     public partial class Form1 : Form
     {
+
+        private Point arrowStart;
+
         Graphics graphics;
         CGrafPrevod conversion = new CGrafPrevod();
 
@@ -38,12 +41,21 @@ namespace FormsApp
         int m = 1;
 
         double Fx = 0.0; 
-        double Fy = -9.81; 
+        double Fy = -9.81;
+
+        double firstClickX = 0;
+        double firstClickY = 0;
+        bool isClicked = false;
+        
+
+        double xspeed,yspeed,dx,dy;
 
         public Form1()
         {
             InitializeComponent();
             graphics = pictrOutput.CreateGraphics();
+            conversion.ZadajHraniceX(0, pictrOutput.Width, 0, 5000);
+            conversion.ZadajHraniceY(0, pictrOutput.Height, 0, 3000);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -89,16 +101,26 @@ namespace FormsApp
             //zrychlenie
             //vx = v cosalfa
             double ax = Fx / m; // m is the mass of the ball
-            double ay = Fy / m;
+            double ay = Fy * m;
 
+            
             //rychlost
-            //vx = vx + ax * interval;
-            //vy = vy + ay * interval;
+            vx += ax * interval;
+            vy += ay * interval;
+            Console.WriteLine($"vy: {vy}");
 
 
             //vypocitaj xFyz a zFyz
-            fposx = fposx + vx * interval;
-            fposy = fposy + vy * interval;
+            fposx += vx * interval;
+            fposy += vy * interval;
+
+            Console.WriteLine($"fposy: {fposy}");
+            Console.WriteLine($"speed: {xspeed}");
+            Console.WriteLine($"speed: {yspeed}");
+            Console.WriteLine($"dx: {dx}");
+            Console.WriteLine($"dy: {dy}");
+
+
 
 
             //premen na xGraf a yGraf
@@ -119,6 +141,18 @@ namespace FormsApp
             //posX += vx;
             //posY += vy;
             graphics.FillEllipse(Brushes.Red, posX, posY, sirka, sirka);
+        }
+        private void pictrOutput_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+                if (isClicked)
+                {
+                    pictrOutput.Invalidate();
+                    
+                    Pen pen = new Pen(Brushes.Lime, 5);
+                    graphics.DrawLine(pen, arrowStart, e.Location);
+                }
+            
         }
 
         private void btnAccelerate_Click(object sender, EventArgs e)
@@ -151,18 +185,48 @@ namespace FormsApp
 
 
         private void pictrOutput_MouseClick(object sender, MouseEventArgs e)
-        {
-            // Calculate the new velocity based on the clicked position
-            double dx = e.X - posX;
-            double dy = posY - e.Y;
-            double distance = Math.Sqrt(dx * dx + dy * dy);
-            double speed = 500; // Set the speed of the ball
-            double newVx = speed * dx / distance;
-            double newVy = speed * dy / distance;
+        {          
+            if (isClicked == false)
+            {
+                arrowStart = e.Location;
+                isClicked = true;
 
-            // Set the new velocity
-            vx = newVx;
-            vy = newVy;
+                
+                // First click, record position
+                firstClickX = conversion.XgrafToMath(e.X);
+
+                firstClickY = conversion.YGrafToMath(e.Y);
+                isClicked = true;
+            }
+            else
+            {
+                graphics.DrawLine(Pens.Khaki, arrowStart, e.Location);
+                // Second click, calculate direction and speed
+                double secondClickX = conversion.XgrafToMath(e.X);
+                double secondClickY = conversion.YGrafToMath(e.Y);
+               
+
+                dx = secondClickX - firstClickX;
+                dy = secondClickY - firstClickY;
+                double distance = Math.Sqrt(dx * dx + dy * dy);
+
+                double directionX = dx / distance;
+                double directionY = dy / distance;
+
+
+                double speed = distance / 10; // adjust factor as needed
+
+                vx = speed * directionX;
+                vy = speed * directionY;
+
+                // adjust factor as needed
+
+                //vx = xspeed * directionX;
+                //vy = yspeed * directionY;
+
+                isClicked = false;
+            }
         }
+
     }
 }

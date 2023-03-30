@@ -91,11 +91,12 @@ namespace FormsApp
         }
         public double YGrafToMath( int YGraf)
         {
-            int y1 = YGraf + YgrafMax; //otočenie 
-            int y2 = y1 - YgrafMin; // posun ...interval <0, ygrafmax-ygarf min>
-            double y3 = 1.0 * y2 / (YgrafMax - YgrafMin); //interval <0,ymathmax -ymathmin>
-            double y4 = y3 - (YmathMax - YmathMin); //posun na vyzadovany interval <Ymathmin, Ymathmax>
-            return y4;
+            int y1 = YGraf - YgrafMin; //otočenie 
+            double y2 = y1 * (YmathMax - YmathMin); // posun ...interval <0, ygrafmax-ygarf min>
+            double y3 = y2 / (YgrafMax - YgrafMin); //interval <0,ymathmax -ymathmin>
+            double y4 = y3 + YmathMin;
+            double y5 = YmathMax - y4;//posun na vyzadovany interval <Ymathmin, Ymathmax>
+            return y5;
         }
 
         //nevracia iba vzchdzaju
