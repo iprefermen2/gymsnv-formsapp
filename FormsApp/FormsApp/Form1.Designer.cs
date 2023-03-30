@@ -49,14 +49,14 @@
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Zmaž";
             this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+
             // 
             // pictrOutput
             // 
             this.pictrOutput.BackColor = System.Drawing.Color.Khaki;
-            this.pictrOutput.Location = new System.Drawing.Point(167, 37);
+            this.pictrOutput.Location = new System.Drawing.Point(156, 37);
             this.pictrOutput.Name = "pictrOutput";
-            this.pictrOutput.Size = new System.Drawing.Size(400, 400);
+            this.pictrOutput.Size = new System.Drawing.Size(500, 400);
             this.pictrOutput.TabIndex = 1;
             this.pictrOutput.TabStop = false;
             // 
@@ -68,12 +68,12 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Strieľaj";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnFire_Click);
+            this.button1.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // timerStart
             // 
             this.timerStart.Interval = 10;
-            this.timerStart.Tick += new System.EventHandler(this.timerStart_Tick);
+            this.timerStart.Tick += new System.EventHandler(this.spustac_Tick);
             // 
             // btnAccelerate
             // 
@@ -83,7 +83,7 @@
             this.btnAccelerate.TabIndex = 3;
             this.btnAccelerate.Text = "zrychli";
             this.btnAccelerate.UseVisualStyleBackColor = true;
-            this.btnAccelerate.Click += new System.EventHandler(this.btnAccelerate_Click);
+            this.btnAccelerate.Click += new System.EventHandler(this.btnZrychli_Click);
             // 
             // btnBrake
             // 
@@ -93,11 +93,11 @@
             this.btnBrake.TabIndex = 4;
             this.btnBrake.Text = "spomal";
             this.btnBrake.UseVisualStyleBackColor = true;
-            this.btnBrake.Click += new System.EventHandler(this.btnBrake_Click);
+            this.btnBrake.Click += new System.EventHandler(this.btnSpomal_Click);
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(596, 465);
+            this.ClientSize = new System.Drawing.Size(675, 465);
             this.Controls.Add(this.btnBrake);
             this.Controls.Add(this.btnAccelerate);
             this.Controls.Add(this.button1);
