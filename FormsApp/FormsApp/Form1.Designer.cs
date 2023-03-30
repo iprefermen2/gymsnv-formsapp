@@ -56,9 +56,10 @@
             this.pictrOutput.BackColor = System.Drawing.Color.Khaki;
             this.pictrOutput.Location = new System.Drawing.Point(167, 37);
             this.pictrOutput.Name = "pictrOutput";
-            this.pictrOutput.Size = new System.Drawing.Size(400, 400);
+            this.pictrOutput.Size = new System.Drawing.Size(500, 400);
             this.pictrOutput.TabIndex = 1;
             this.pictrOutput.TabStop = false;
+            this.pictrOutput.Click += new System.EventHandler(this.pictrOutput_Click);
             // 
             // button1
             // 
@@ -97,7 +98,7 @@
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(596, 465);
+            this.ClientSize = new System.Drawing.Size(704, 465);
             this.Controls.Add(this.btnBrake);
             this.Controls.Add(this.btnAccelerate);
             this.Controls.Add(this.button1);
